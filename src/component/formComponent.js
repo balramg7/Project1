@@ -59,7 +59,7 @@ const Form = () => {
                             />
                         </div>
                         <div className="col-6">
-                            <label htmlFor="salary">SALARY</label>
+                            <label htmlFor="salary">  SALARY</label>
                             <input
                             type="number"
                             className="form-control"
@@ -69,6 +69,7 @@ const Form = () => {
                             onChange={handleInputChange}
                             />
                         </div>
+                        <div className="container"></div>
                         <button className="btn btn-success mt-4 ps-5 pe-5">
                             ADD
                         </button>

@@ -8,7 +8,7 @@ export default function InputBox(props){
     let value = props.value??"";
     return(
         <div className="col-6">
-            <label htmlFor={key}>{placeholder}:</label>
+            <label htmlFor={key}>{placeholder}</label>
             <input
             type={type}
             className="form-control"
