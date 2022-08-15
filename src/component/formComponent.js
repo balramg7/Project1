@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import InputBox from "./inputComponent";
+import { addEmployeeToFirebase } from "../service/employeeService";
 
-const Form = () => {
+const Form = (props) => {
     let [employee, setEmployee] = useState({
         id: null,
         name: null,
@@ -9,13 +10,14 @@ const Form = () => {
         dept: null,
         salary: null,
     })
-    const addEmployee = () => {
-        console.log(employee)
+    const addEmployee = (event) => {
+        event.preventDefault();
+        addEmployeeToFirebase(employee);
+        props.setUpdateRequired(true)
     }
     const handleInputChange = (event) => {
         setEmployee(() => ({...employee, [event.target.id]: event.target.value}));
     }
-    console.log(employee);
     return(
         <div className="col-3">
             <form onSubmit={addEmployee}>
