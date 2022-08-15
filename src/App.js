@@ -7,11 +7,11 @@ import {useEffect, useState} from 'react';
 import {getEmployeesFromFirebase} from './service/employeeService';
 
   function App() {
-    const [employees, setemployees] = useState([])
+    const [employees, setEmployees] = useState([])
     const [isUpdateRequired, setUpdateRequired] = useState(true);
 
     const addEmployeeFromForm = (employee) => {
-        setemployees([...employees, employee])
+        setEmployees([...employees, employee])
     }
     useEffect(() => {
       if(isUpdateRequired)
@@ -28,7 +28,7 @@ import {getEmployeesFromFirebase} from './service/employeeService';
     <div className="container-fluid mt-4">
                 <div className="row">
                 <Form addEmployeeFromForm ={addEmployeeFromForm} setUpdateRequired={setUpdateRequired}/>
-                    <Detail employee={employee}></Detail>
+                    <Detail employees={employees}></Detail>
                 </div>
             </div>
     <InputBox></InputBox>

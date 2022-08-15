@@ -11,7 +11,7 @@ const addEmployeeToFirebase = async (employee) => {
 }
 
 const getEmployeesFromFirebase = async () => {
-    const documents = await getDocs(collection(db, "employee"))
+    const documents = await getDocs(collection(bp, "employee"))
     const employees = documents.docs.map(doc => doc.data());
     console.log(employees);
     return employees;
