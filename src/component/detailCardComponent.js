@@ -2,6 +2,10 @@ import React from "react";
 
 export default function DetailCard(props) {
     const employee = props.employeeInfo;
+    const passOrFail =
+        employee?.salary <20000 && employee?.age >18
+            ? "Pass"
+            : "Fail";
     return (
         <div className="col-6">
             <div
@@ -23,6 +27,18 @@ export default function DetailCard(props) {
                     }}
                 >
                     Id No: {employee?.id??""}
+                </span>
+                <span
+                    style={{
+                        position: "absolute",
+
+                        top: "5px",
+                        left: "10px",
+                        fontWeight: "600",
+                        color: passOrFail === "Pass" ? "green" : "red",
+                    }}
+                >
+                    {passOrFail??""}
                 </span>
                 <div
                     style={{
